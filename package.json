@@ -1,0 +1,20 @@
+{
+  "name": "latex-rrks",
+  "displayName": "latex rrks",
+  "description": "This is just a test",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "latex",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

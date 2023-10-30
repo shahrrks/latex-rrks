@@ -1,0 +1,846 @@
+{
+
+        "exam_Template": {
+            "prefix": "latex_exam_template",
+            "body": [
+              "\\documentclass[addpoints,12pt,twoside]{exam} %answers ",
+              "\\usepackage[paper=a4paper,left=15mm,right=15mm,top=25mm,bottom=25mm]{geometry}",
+              "\\usepackage{graphicx}",
+              "%\\usepackage[dvips]{graphicx}",
+              "\\usepackage{floatflt,epsfig} ",
+              "\\usepackage{ngerman}",
+              "\\usepackage{german}",
+              "\\usepackage[utf8]{inputenc}",
+              "\\usepackage{amssymb, amsmath}",
+              "\\usepackage[gate,ic,optics]{circ}",
+              "\\usepackage{hyperref}",
+              "",
+              "\\usepackage{tikz,pgfplots}",
+              "",
+              "\\usepackage{graphicx}",
+              "%\\usepackage{geometry}",
+              "\\usepackage{calc}",
+              "",
+              "",
+              "\\usepackage{qrcode} ",
+              "\\usepackage{wrapfig}",
+              "\\usepackage{gensymb}",
+              "\\usepackage{siunitx}",
+              "",
+              "\\usepackage{color}",
+              "\\definecolor{GridColor}{gray}{0.8}",
+              "\\definecolor{SolutionBoxColor}{gray}{0.8}",
+              "\\definecolor{SolutionColor}{rgb}{0.8,0.9,1}",
+              "",
+              "\\colorgrids",
+              "\\colorsolutionboxes",
+              "",
+              "%%MACROS ",
+              "\\newcommand{\\tdate}{18. April 2021}",
+              "\\newcommand{\\myqr}{\\qrcode[hyperlink, height = 1cm]{www.github.com/shahrrks}}",
+              "\\newcommand\\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} % Gauss function, parameters mu and sigma",
+              "%%",
+              "",
+              "\\sisetup{",
+              "locale = DE ,",
+              "per-mode = symbol",
+              "}",
+              "",
+              "\\pagestyle{headandfoot}",
+              "",
+              "\\headrule",
+              "\\footrule",
+              "\\firstpageheader{ETIT-4}{\\bfseries\\Large {Übungsblatt 1}}{\\tdate}",
+              "\\runningheader{ETIT-4}",
+              "{Übungsblatt - 1}",
+              "{\\tdate}",
+              "\\firstpagefooter{ETIT-4}{Seite \\thepage\\ von \\numpages}{\\myqr}",
+              "\\runningfooter{ETIT-4}{Seite \\thepage\\ von \\numpages}{Shah Rrks}",
+              "",
+              "\\boxedpoints",
+              "%\\pointpoints{Punkt}{Punkte}",
+              "\\pointsinmargin",
+              "\\marginpointname{\\%}",
+              "",
+              "\\begin{document}",
+              "%\\setcounter{section}{1} %current page -1",
+              "\\author{Shah Rrks}",
+              "\\section*{Sys 1}",
+              "\\begin{questions}",
+              "\\end{document}"
+            ],
+            "description": "exam_Template"
+          }
+    
+        ,
+        "qr_code": {
+            "prefix": "qr_c",
+            "body": [
+              "\\qrcode[height = 1cm]{$1}"
+            ],
+            "description": "qr_code"
+          }
+          ,
+          "question": {
+            "prefix": "qu",
+            "body": [
+              "\\question[$1]$0"
+            ],
+            "description": "question"
+          }
+          ,
+          "Inline Math": {
+            "prefix": "mk",
+            "body": [
+              "\\( $1  \\) $0"
+            ],
+            "description": "Inline Math"
+          }
+    ,
+          "Display Math": {
+            "prefix": "dm",
+            "body": [
+              "\\[ $1  \\]"
+            ],
+            "description": "Display Math"
+          }
+          ,
+          "toPower": {
+            "prefix": "tp",
+            "body": [
+              "^{$1}$0"
+            ],
+            "description": "toPower"
+          }
+          ,
+          "square": {
+            "prefix": "sq",
+            "body": [
+              "^2"
+            ],
+            "description": "square"
+          }
+          ,
+          "cube": {
+            "prefix": "cb",
+            "body": [
+              "^3"
+            ],
+            "description": "cube"
+          }
+          ,
+          "package": {
+            "prefix": "pac",
+            "body": [
+              "\\usepackage{$1}$0"
+            ],
+            "description": "package"
+          }
+          ,
+    
+          "insert graphics": {
+            "prefix": "insert_pic",
+            "body": [
+              "\\begin{figure}[h!]",
+              "  \\includegraphics[width= 0.7]{$1}",
+              "  \\caption{$2}",
+              "  \\label{$3}",
+              "\\end{figure}$0"
+            ],
+            "description": "insert graphics"
+          }
+          ,
+          "frame box": {
+            "prefix": "fbox",
+            "body": [
+              "\\framebox[1.1\\width]{$1} \\par $0"
+            ],
+            "description": "frame box"
+          }
+          ,
+          "question environment": {
+            "prefix": "beg_question",
+            "body": [
+              "\\begin{questions}",
+              "\\question[$1] $0",
+              "\\end{questions}"
+            ],
+            "description": "question environment"
+          }
+          ,
+          "sum_": {
+            "prefix": "sum",
+            "body": [
+              "\\sum_{n=${1:1}}^{${2:\\infty}} ${3:a_n z^n}"
+            ],
+            "description": "sum_"
+          }
+          ,
+          "taylor": {
+            "prefix": "taylor",
+            "body": [
+              "\\sum_{${1:k}=${2:0}}^{${3:\\infty}} ${4:c_$1} (x-a)^$1 $0"
+            ],
+            "description": "taylor"
+          }
+          ,
+          "plot": {
+            "prefix": "plot",
+            "body": [
+              "\\begin{figure}[$1]",
+              "\\centering",
+              "\\begin{tikzpicture}",
+              "\\begin{axis}[",
+              "xmin= ${2:-10}, xmax= ${3:10},",
+              "ymin= ${4:-10}, ymax = ${5:10},",
+              "axis lines = middle,",
+              "]",
+              "\\addplot[domain=$2:$3, samples=${6:100}]{$7};",
+              "\\end{axis}",
+              "\\end{tikzpicture}",
+              "\\caption{$8}",
+              "\\label{${9:$8}}",
+              "\\end{figure}"
+            ],
+            "description": "plot"
+          } 
+          ,
+          "document_text": {
+            "scope" : "latex",
+            "prefix": "do_text_",
+            "body": [
+              "\\documentclass[12pt]{article}",
+              "\\usepackage[utf8]{inputenc}",
+              "\\usepackage{floatflt,epsfig}",
+              "\\usepackage{ngerman}",
+              "\\usepackage{amssymb, amsmath}",
+              "\\usepackage{hyperref}",
+              "\\usepackage{tikz,pgfplots}",
+              "\\usepackage{qrcode} ",
+              "\\usepackage{fancyhdr}",
+              "",
+              "\\pagestyle{fancy}",
+              "\\fancyhf{}",
+              "\\rhead{Overleaf}",
+              "\\lhead{Guides and tutorials}",
+              "\\rfoot{Seite \\thepage}",
+              "",
+              "",
+              "\\begin{document}",
+              "",
+              "% ben --> begin enumerate ",
+              "% bit --> begin Itemize ",
+              "% sse --> section ",
+              "% sss --> subsection ",
+              "% ss2 --> subsubsection ",
+              "%@(\\left( $1 \\right)",
+              "%@{\\left\\{ $1 \\right\\}",
+              "%@[\\left[ $1 \\right]",
+              "",
+              "",
+              "",
+              "\\end{document}"
+            ],
+            "description": "document_text"
+          } ,
+    
+          "nabla": {
+            "prefix": "nab",
+            "body": [
+              "\\nabla "
+            ],
+            "description": "nabla"
+          },
+          "integral": {
+            "prefix": "dint",
+            "body": [
+              "\\int_{${1:-\\infty}}^{${2:\\infty}} ${3:${VISUAL}} $0"
+            ],
+            "description": "integral"
+          },
+          "figure": {
+            "prefix": "fig",
+            "body": [
+              "\\begin{figure}[${1:htpb}]",
+              "\\centering",
+              "\\includegraphics[width=0.8\\textwidth]{$0}",
+              "\\caption{${4:$3}}",
+              "\\label{fig:${5:${3/\\W+/-/g}}}",
+              "\\end{figure}"
+            ],
+            "description": "figure"
+          },
+          "fraction": {
+            "prefix": "fra",
+            "body": [
+              "\\\\frac{$1}{$2}$0"
+            ],
+            "description": "fraction"
+          },
+          "Infinity": {
+            "prefix": "ooo",
+            "body": [
+              "\\infty"
+            ],
+            "description": "Infinity"
+          }
+          ,
+          "to": {
+            "prefix": "to",
+            "body": [
+              "\\to"
+            ],
+            "description": "to"
+          },
+          "sin": {
+            "prefix": "sin",
+            "body": [
+              "\\sin($1)"
+            ],
+            "description": "sin"
+          },
+          "cos": {
+            "prefix": "cos",
+            "body": [
+              "\\cos($1)"
+            ],
+            "description": "cos"
+          },
+          "tan": {
+            "prefix": "tan",
+            "body": [
+              "\\tan($1)"
+            ],
+            "description": "tan"
+          },
+          "cot": {
+            "prefix": "cot",
+            "body": [
+              "\\cot($1)"
+            ],
+            "description": "cot"
+        },
+          "sinh": {
+            "prefix": "sinh",
+            "body": [
+              "\\sinh($1)"
+            ],
+            "description": "sinh"
+        }, 
+        "times": {
+            "prefix": "xx",
+            "body": [
+              "\\times"
+            ],
+            "description": "times"
+          },
+          "cosh": {
+            "prefix": "cosh",
+            "body": [
+              "\\cosh($1)"
+            ],
+            "description": "cosh"
+        },
+        "derevative": {
+            "prefix": "dv",
+            "body": [
+              "\\dv{$1}"
+            ],
+            "description": "derevative"
+          },
+          "derevative_y_x": {
+            "prefix": "dvyx",
+            "body": [
+              "\\dv{$1}{$2}"
+            ],
+            "description": "derevative_y_x"
+          },
+        "p_derevative": {
+            "prefix": "pd",
+            "body": [
+              "\\pdv{$1}"
+            ],
+            "description": "p_derevative"
+          },
+          "p_f_x": {
+            "prefix": "pdv",
+            "body": [
+              "\\pdv{$1}{$2}"
+            ],
+            "description": "p_f_x"
+          },
+          "p_derevative2": {
+            "prefix": "pd2",
+            "body": [
+              "\\pdv[2]{$1}{$2}"
+            ],
+            "description": "p_derevative"
+          },
+          "p_derevative3": {
+            "prefix": "pd3",
+            "body": [
+              "\\pdv[3]{$1}{$2}"
+            ],
+            "description": "p_derevative"
+          },
+          "p_derevativek": {
+            "prefix": "pdk",
+            "body": [
+              "\\pdv[$1]{$2}{$3}"
+            ],
+            "description": "p_derevativek"
+          }, 
+          "t_int": {
+            "prefix": "t_int",
+            "body": [
+              "\\int_{$1}^{$2}\\int_{$3}^{$4}\\int_{$5}^{$6}\\left($7\\right)dxdydz$0",
+            ],
+            "description": "t_int"
+          }, 
+          "underbrace": {
+            "prefix": "ub",
+            "body": [
+              "\\underbrace{$1}_{$2}$0"
+            ],
+            "description": "underbrace"
+          }, 
+          "overbrace": {
+            "prefix": "ob",
+            "body": [
+              "\\overbrace{$1}^{$2}$0"
+            ],
+            "description": "overbrace"
+          },
+          "implies": {
+            "prefix": "im",
+            "body": [
+              "\\implies"
+            ],
+            "description": "implies"
+          }, 
+          "inverse": {
+            "prefix": "inv",
+            "body": [
+              "^{-$1}$0"
+            ],
+            "description": "inverse"
+          },
+          "underscript ": {
+            "prefix": "un",
+            "body": [
+              "_{$1}$0"
+            ],
+            "description": "underscript "
+          },
+          "prod ": {
+            "prefix": "prod",
+            "body": [
+              "\\prod_{n=$1}^{$2} $0"
+            ],
+            "description": "underscript "
+          },
+          "dfrac": {
+            "prefix": "dfrac",
+            "body": [
+              "\\dfrac{dy}{dx}"
+            ],
+            "description": "dfrac"
+          },
+          "vector": {
+            "prefix": "vec",
+            "body": [
+              "\\vec{$0}"
+            ],
+            "description": "vector"
+          },
+          "leftrightarrow": {
+            "prefix": "lf",
+            "body": [
+              "\\leftrightarrow"
+            ],
+            "description": "leftrightarrow"
+          },
+          "2dgraph": {
+            "prefix": "2d_graph",
+            "body": [
+              "\\begin{tikzpicture}[scale = 2]",
+              "    \\draw[style = thick, -latex] (-3,0) -- (3,0) node[right] {$x$};",
+              "    \\draw[style = thick, -latex] (0,-3) -- (0,3)node[above]{$f(x)$};",
+              "    \\draw[step=.25cm,gray,very thin] (-2.9,-2.9) grid (2.9,2.9);",
+              "",
+              "\\end{tikzpicture}"
+            ],
+            "description": "2dgraph"
+          }, 
+          "2d_time_graph": {
+            "prefix": "t_fx_graph_up",
+            "body": [
+              "\\begin{tikzpicture}[scale = 2]",
+              "    \\draw[style = thick, -latex] (-4,0) -- (4,0) node[right] {\\( t  \\)};",
+              "    \\draw[style = thick, -latex](-3,-2) -- (-3,3) node[above]{\\( f(x)  \\)};",
+              "    \\draw[step=.25cm,gray,very thin] (-3.9,-1.9) grid (3.9,2.9);",
+              "",
+              "\\end{tikzpicture}"
+            ],
+            "description": "2d_time_graph"
+          },
+          "2d_time_graph_down": {
+            "prefix": "t_fx_graph_down",
+            "body": [
+              "\\begin{tikzpicture}[scale = 2]",
+              "    \\draw[style = thick, -latex] (-4,2) -- (4,2) node[right] {\\( t  \\)};",
+              "    \\draw[style = thick, -latex](-3,-2) -- (-3,3) node[above]{\\( f(x)  \\)};",
+              "    \\draw[step=.25cm,gray,very thin] (-3.9,-1.9) grid (3.9,2.9);",
+              "",
+              "\\end{tikzpicture}"
+            ],
+            "description": "2d_time_graph_down"
+          },
+          
+          "andEqual": {
+            "prefix": "ii",
+            "body": [
+              "&="
+            ],
+            "description": "andEqual"
+          },
+          "begin_Align": {
+            "prefix": "balign",
+            "body": [
+              "\\begin{align*}",
+              "   $0 &= $2 \\\\  ",
+              "      &= $3 \\\\ ",
+              "      &= $4 \\\\ ",
+              "      &= $5 \\\\ ",
+              "      &= $6 \\\\ ",
+              "      &= $7 \\\\ ",
+              "\\end{align*}"
+            ],
+            "description": "begin_Align"
+          },
+          "mathcal": {
+            "prefix": "mc",
+            "body": [
+              "\\mathcal{}"
+            ],
+            "description": "mathcal"
+          },
+          "integration": {
+            "prefix": "int",
+            "body": [
+              "\\int"
+            ],
+            "description": "integration"
+          },
+          "vspace": {
+            "prefix": "vs",
+            "body": [
+              "\\vspace{$0}"
+            ],
+            "description": "vertical Spacing"
+          },
+          "hspace": {
+            "prefix": "hs",
+            "body": [
+              "\\hspace{$0}"
+            ],
+            "description": "Horizontal Spacing"
+          },
+          "epsilon_0": {
+            "prefix": "ep",
+            "body": [
+              "\\varepsilon_0"
+            ],
+            "description": "epsilon_0"
+          },
+          "3DD vectoren": {
+            "prefix": "k",
+            "body": [
+              "\\"
+            ],
+            "description": "3DD vectoren"
+          },
+          "alphabetic_enumerate": {
+            "prefix": "enum_alpha",
+            "body": [
+              "\\begin{enumerate}[label=(\\alph*)]",
+              "    \\item $1",
+              "\\end{enumerate}"
+            ],
+            "description": "alphabetic_enumerate"
+          },
+          "newcommand": {
+            "prefix": "nc",
+            "body": [
+              "\\newcommand{$1}{$2}"
+            ],
+            "description": "New Command Latex"
+        },
+        "ElektrischePot": {
+            "prefix": "epot",
+            "body": [
+              "\\epot"
+            ],
+            "description": "Elektrische_potential"
+        },
+        "karthetische Koordinate": {
+            "prefix": "kcod",
+            "body": [
+              "\\kcod{$1}{$2}{$3}$0"
+            ],
+            "description": "karthetische Koordinate"
+        },
+        "Spherical Koordinate": {
+            "prefix": "scod",
+            "body": [
+              "\\scod"
+            ],
+            "description": "Spherical Koordinate"
+        },
+        "Zylindrische Koordinate": {
+            "prefix": "zcod",
+            "body": [
+              "\\ccod"
+            ],
+            "description": "Zylindrische Koordinate"
+        },
+        "delta3": {
+            "prefix": "dth",
+            "body": [
+              "\\dth"
+            ],
+            "description": "delta_hoch_3"
+        },
+        "newpage": {
+            "prefix": "new",
+            "body": [
+              "\\newpage"
+            ],
+            "description": "newpage"
+        },
+        "subpart": {
+            "prefix": "SPAR",
+            "body": [
+              "\\subpart"
+            ],
+            "description": "subpart"
+        },"part": {
+            "prefix": "PAR",
+            "body": [
+              "\\part"
+            ],
+            "description": "part"
+        },
+        "begin_end": {
+            "prefix": "beg",
+            "body": [
+              "\\begin{$1}",
+              "$0",
+              "\\end{$1}"
+            ],
+            "description": "begin_end"
+          },
+          "begin_end_parts": {
+            "prefix": "BEP",
+            "body": [
+              "\\begin{parts}",
+              "$0",
+              "\\end{parts}"
+            ],
+            "description": "begin_end_parts"
+          },
+          "begin_end_subparts": {
+            "prefix": "BESP",
+            "body": [
+              "\\begin{subparts}",
+              "$0",
+              "\\end{subparts}"
+            ],
+            "description": "begin_end_subparts"
+          },
+          "pmatrix": {
+            "prefix": "pmat",
+            "body": [
+              "\\begin{pmatrix}",
+              "$1 & $2 & $3\\ \\",
+              "$4 & $5 & $6\\ \\",
+              "$7 & $8 & $9",
+              "\\end{pmatrix}"
+            ],
+            "description": "pmatrix"
+          },
+          "fig2": {
+            "prefix": "fig2",
+            "body": [
+              "",
+              "\\begin{figure}[H]",
+              "\\centering   ",
+              "\\subfigure[$1]{\\label{$1}\\includegraphics[width=0.4\\textwidth]{}}",
+              "\\subfigure[$2]{\\label{$2}\\includegraphics[width=0.4\\textwidth]{}}",
+              "\\caption{$3}",
+              "\\end{figure}",
+              "",
+              ""
+            ],
+            "description": "fig2"
+          },
+        
+          "bMini2": {
+            "prefix": "bmi2",
+            "body": [
+              "\\begin{minipage}{0.4\\textwidth}",
+              "$1",
+              "\\end{minipage}",
+              "\\begin{minipage}{0.4\\textwidth}",
+              "$2",
+              "\\end{minipage}",
+              "$0"
+            ],
+            "description": "bMini2"
+          },
+          "label_alpha": {
+            "prefix": "l_alpha",
+            "body": [
+              "[label=(\\alph*)]"
+            ],
+            "description": "label_alpha"
+          },
+          "quad": {
+            "prefix": "qd",
+            "body": [
+              "\\quad"
+            ],
+            "description": "quad"
+          },
+          "alpha": {
+            "prefix": "al",
+            "body": [
+              "\\alpha"
+            ],
+            "description": "alpha"
+          },
+          "beta": {
+            "prefix": "be",
+            "body": [
+              "\\beta"
+            ],
+            "description": "beta"
+          },
+          "gamma": {
+            "prefix": "gm",
+            "body": [
+              "\\gamma"
+            ],
+            "description": "gamma"
+          },
+          "wrapfigure": {
+            "prefix": "wfig",
+            "body": [
+              "\\begin{wrapfigure}{r}{0.5\\textwidth}",
+              "    \\centering",
+              "    \\includegraphics[width=0.5\\textwidth]{$1}",
+              "\\end{wrapfigure}",
+              "$0"
+            ],
+            "description": "wrapfigure"
+          },
+          "underscore": {
+            "prefix": "_",
+            "body": [
+              "_{$1}$0"
+            ],
+            "description": "underscore"
+          }, 
+          "emph": {
+            "prefix": "emph",
+            "body": [
+              "\\begin{empheq}[box=\\fbox]{align}",
+              "           $1",
+              " \\end{empheq}",
+              ""
+            ],
+            "description": "emph"
+          },
+          "table new line": {
+            "prefix": "nl",
+            "body": [
+              "\\hline "
+            ],
+            "description": "table new line"
+          },
+          "anf": {
+            "prefix": "Anführungszeichen ",
+            "body": [
+              "\\glqq $1\\grqq{} $0"
+            ],
+            "description": "anf"
+          },
+          "code": {
+            "prefix": "write Code",
+            "body": [
+              "\\begin{verbatim}",
+              "{ this Program does %a & %b }",
+              "for i := 1 to 27 do",
+              "begin",
+              "table[i] := fn(i);",
+              "process(i)",
+              "end;",
+              "\\end{verbatim}",
+              ""
+            ],
+            "description": "code"
+          }, 
+          "beF": {
+            "prefix": "Begin Frame",
+            "body": [
+              "\\begin{frame}{t}",
+              "    \\frametitle{$1}",
+              "    $0",
+              "\\end{frame}",
+              ""
+            ],
+            "description": "beF"
+          },
+          "beB": {
+            "prefix": "Begin Block",
+            "body": [
+              "\\begin{block}{$1}",
+              "$0",
+              "\\end{block}"
+            ],
+            "description": "beB"
+          },
+          "gls shortcut": {
+            "prefix": "gl",
+            "body": [
+              "\\gls{$1}$0"
+            ],
+            "description": "gls shortcut"
+          },
+          "citation": {
+            "prefix": "Cit",
+            "body": [
+              "\\cite{$1}$0"
+            ],
+            "description": "citation"
+          },
+          "minipage": {
+            "prefix": "mPage",
+            "body": [
+              "  \\begin{minipage}[t]{0.4\\textwidth}",
+              "    \\includegraphics[width=\\textwidth]{$1}",
+              "\\end{minipage",
+              "\\hfill",
+              "\\begin{minipage}[t]{0.3\\textwidth}",
+              "    \\includegraphics[width=\\textwidth]{$2} ",
+              "\\end{minipage}",
+              "$0"
+            ],
+            "description": "minipage"
+          }
+          
+    
+    
+
+
+}
