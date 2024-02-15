@@ -1,0 +1,212 @@
+
+\usepackage{ifthen}
+
+% ---------------------------------------------------------------
+% page layout
+% ---------------------------------------------------------------
+\usepackage{geometry}
+\geometry{twoside,inner=2.5cm, top=2cm, outer=2cm, bottom = 2cm, includefoot, includehead}
+
+% Caption design
+\usepackage[bf,sf,nooneline]{caption} % see caption manual for more information
+\captionsetup{format=plain}
+
+% ---------------------------------------------------------------
+% figures
+% ---------------------------------------------------------------
+\usepackage{float} 					% force figures to location with [H]
+\usepackage[figuresright]{rotating} % rotation of figures
+\usepackage{subfigure}				% stack and arange figures
+\usepackage{graphics} 				% you now may use jpg
+\usepackage{eso-pic}				% include images covering the whole page (see title page)
+\usepackage{overpic}				% you can use this package to write over your figure, see manual
+\setlength{\subfigcapmargin}{0.5em} % see subfigure package - spacing between labels captions of subfigures
+
+% ---------------------------------------------------------------
+% tikz, pstricks style drawing
+% ---------------------------------------------------------------
+\usepackage{tikz,pgfplots,pgfkeys}	% for drawings (similar to pstricks and Co.)
+\usepackage{psfrag} % Only for LaTeX
+% ---------------------------------------------------------------
+% type face
+% ---------------------------------------------------------------
+\usepackage[T1]{fontenc}    %% 
+% \usepackage[latin1]{inputenc} 
+\usepackage[utf8]{inputenc} %%% use utf8x encoding instead latin1
+
+% RUB fonts, if installed
+%\renewcommand{\sfdefault}{rubflama}
+%\renewcommand{\rmdefault}{rubscala}
+
+% if not you can use these fonts.
+% sans serif
+\usepackage{helvet}
+% serif
+\usepackage{lmodern}
+
+\usepackage{pdfpages}
+
+% ---------------------------------------------------------------
+% symboles und math
+% ---------------------------------------------------------------
+\usepackage{amsmath} % math envoirment.
+\usepackage{amssymb} 	% more symbols for writing
+\usepackage{amsfonts}
+\usepackage{fixmath}	% fixes some errors in amsmath
+\usepackage{upgreek}
+% ---------------------------------------------------------------
+% language
+% ---------------------------------------------------------------
+\usepackage[
+%	german,		% Alte deutsche Rechtschreibung
+%	ngerman,	% Neue deutsche Rechtschreibung
+	english,	% english
+%	french,		% francais
+]{babel}
+
+% ---------------------------------------------------------------
+% footnotes
+% ---------------------------------------------------------------
+\usepackage{chngcntr} 
+\counterwithout{footnote}{chapter} 	% avoids the footnote counter reset after each chapter
+
+% ---------------------------------------------------------------
+% literature list
+% ---------------------------------------------------------------
+% Bibliography using bibtex, include to your document with  \bibliography{bibtex-datei}
+% some examples for different bibtex-styles
+% \bibliographystyle{plain}
+%\bibliographystyle{acm}
+\bibliographystyle{plaindin}
+%\bibliographystyle{is-abbrv}
+
+% ---------------------------------------------------------------
+% Hyperref
+% ---------------------------------------------------------------
+%% colored links for pdf
+%\definecolor{pdfurlcolor}{rgb}{0,0,0.6}
+%\definecolor{pdffilecolor}{rgb}{0.7,0,0}
+%\definecolor{pdflinkcolor}{rgb}{0,0,0.6}
+%\definecolor{pdfcitecolor}{rgb}{0,0,0.6}
+
+% link color for print, black
+\definecolor{pdfurlcolor}{rgb}{0,0,0}
+\definecolor{pdffilecolor}{rgb}{0,0,0}
+\definecolor{pdflinkcolor}{rgb}{0,0,0}
+\definecolor{pdfcitecolor}{rgb}{0,0,0}
+
+\usepackage[
+   % link color
+   colorlinks=true,         % links are colored, not with boxes
+   urlcolor=pdfurlcolor,    % \href{...}{...} external (URL)
+   filecolor=pdffilecolor,  % \href{...} local file
+   linkcolor=pdflinkcolor,  % \ref{...} and \pageref{...}
+   citecolor=pdfcitecolor,  % \cite{...}
+   % Links
+   breaklinks,              % links work with line breaks
+   bookmarksnumbered=true,  % enumerate pdf-bookmarks
+   bookmarksopen=true, 		% bookmark-view: all subdirectories are open
+]{hyperref}
+
+% pdf information
+\hypersetup{pdftitle={PDF-LaTeX Vorlage}}
+
+
+\usetikzlibrary{shapes.multipart} % For rounded rectangles
+
+% Define a new command for including rounded images
+\newcommand{\roundedincludegraphics}[2][]{%
+    \tikz\node[inner sep=0, rounded corners, outer sep=0] {\includegraphics[#1]{#2}};%
+}
+
+% ---------------------------------------------------------------
+% head and foot
+% ---------------------------------------------------------------
+\usepackage[headsepline=.4pt]{scrlayer-scrpage}	% package for headings
+\pagestyle{scrheadings} % define the default page-style for your document
+% \setheadsepline{.4pt}	% underline head
+% \usepackage[headsepline=.4pt]{scrlayer-scrpage}
+
+\automark[section]{chapter} % defines leftmark and rightmark: \automark[<rightmark>]{<leftmark>}
+\lehead{\leftmark} 		% left side, even page number: chapter
+\rohead{\rightmark} 	% right side, odd page number: section
+\ofoot{\pagemark} 		% page number
+
+
+% ---------------------------------------------------------------
+% misc.
+% ---------------------------------------------------------------
+
+% TODONOTES, generates a list of todos, placeholder for figures etc.
+% useful package for larger documents. Just have a look at the manual.
+\usepackage[
+%	disable,
+	shadow,colorinlistoftodos,color=green!40
+	]{todonotes}
+
+
+% DEFINE RUB-COLORS
+% you can use the RUB colors in Matlab, too. Look at sheldon/user-public/aschasse/RUB_colors/createRubColorset.m
+\usepackage{calc}
+\definecolor{RUB_blue_0}{RGB}{0,53,96}
+\definecolor{RUB_blue_1}{RGB}{23,82,125}
+\definecolor{RUB_blue_2}{RGB}{80,117,155}
+\definecolor{RUB_blue_3}{RGB}{136,157,188}
+\definecolor{RUB_blue_4}{RGB}{193,203,221}
+
+\definecolor{RUB_green_0}{RGB}{148,193,27}
+\definecolor{RUB_green_1}{RGB}{174,205,82}
+\definecolor{RUB_green_2}{RGB}{196,218,131}
+\definecolor{RUB_green_3}{RGB}{217,230,176}
+\definecolor{RUB_green_4}{RGB}{236,243,218}
+
+\definecolor{RUB_gray_0}{RGB}{221,221,221}
+\definecolor{RUB_gray_1}{RGB}{229,229,229}
+\definecolor{RUB_gray_2}{RGB}{237,237,237}
+\definecolor{RUB_gray_3}{RGB}{245,245,245}
+
+\definecolor{RUB_orange_0}{RGB}{228,136,65}
+\definecolor{RUB_orange_1}{RGB}{232,154,84}
+\definecolor{RUB_orange_2}{RGB}{239,179,113}
+\definecolor{RUB_orange_3}{RGB}{243,188,132}
+\definecolor{RUB_orange_4}{RGB}{250,206,167}
+
+\definecolor{RUB_red_0}{RGB}{198,77,50}
+\definecolor{RUB_red_1}{RGB}{219,103,78}
+\definecolor{RUB_red_2}{RGB}{235,134,111}
+\definecolor{RUB_red_3}{RGB}{248,157,143}
+\definecolor{RUB_red_4}{RGB}{252,189,179}
+
+% ---------------------------------------------------------------
+% own commands
+% ---------------------------------------------------------------
+% e.g.
+\newcommand{\EW}[1]{\text{E}\left\lbrace #1 \right\rbrace } % Expectation
+
+
+%%% Own new Commands %%%% 
+\newcommand{\AUTHOR}{Ravi Rahul Kumar Shah}
+\newcommand{\SUPERVISOR}{M. Sc. Luca Becker}
+\newcommand{\PROF}{Prof. Dr.-Ing. Rainer Martin}
+\newcommand{\TITLE}{Information Bottleneck Based Privacy-preserving Feature Extraction Using a Trainable Acoustic Frontend}
+
+
+% ---------------------------------------------------------------
+% \usepackage{glossaries}
+% \usepackage[automake]{glossaries-extra}
+% \preto\section{\glsresetall}
+% \setabbreviationstyle[acronym]{long-short}
+
+\usepackage[withpage]{acronym}
+% \usepackage[style=numeric]{biblatex}
+% \addbibresource{references.bib}
+
+% \usetikzlibrary{shapes, arrows, positioning, shapes.geometric, fit}
+\usepackage{cleveref}
+
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\raggedbottom
+
+% \usetikzlibrary{shapes.geometric, arrows, positioning, fit}

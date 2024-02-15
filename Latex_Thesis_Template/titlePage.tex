@@ -1,0 +1,42 @@
+% ---------------------------------------------------------------
+% title page
+% ---------------------------------------------------------------
+\thispagestyle{empty}
+
+\newboolean{myLanguageIsEnglish}
+\setboolean{myLanguageIsEnglish}{true} % <--- EDIT!
+\ifthenelse{\boolean{myLanguageIsEnglish}}
+{
+\AddToShipoutPicture*{\put(0,0){\includegraphics[]{Template/title_background_english}}}
+}{% else
+\AddToShipoutPicture*{\put(0,0){\includegraphics[]{Template/title_background_german}}}
+}
+\vspace*{3.5cm}
+\begin{flushleft}
+\Huge % for longer titles you can use other font sizes (e.g. \huge, \Large, etc.)
+Bachelor Thesis \newline % Enter here the type of your work (Master-, Bachelor-, Diplom- oder Studienarbeit)
+\bfseries
+\textsf{\TITLE} % Enter the title of your work
+\end{flushleft}
+\vspace*{0.5cm}
+\begin{Large}
+\textbf{\AUTHOR} % This is the author
+\vspace*{2cm}
+\vfill
+\begin{flushleft}
+\ifthenelse{\boolean{myLanguageIsEnglish}}
+{Advised by:\newline}
+{Betreuung durch:\newline}
+\SUPERVISOR \newline
+\PROF 
+\vspace*{1cm}
+\newline
+\ifthenelse{\boolean{myLanguageIsEnglish}}
+{This thesis was developed between:\newline}
+{Bearbeitungszeitraum:\newline}
+26. Juni 2023 and 18. October 2023
+\end{flushleft}
+\end{Large}
+
+% blank page after title
+\cleardoublepage
