@@ -1,42 +1,38 @@
-% ---------------------------------------------------------------
-% title page
-% ---------------------------------------------------------------
-\thispagestyle{empty}
+\begin{titlepage}
 
-\newboolean{myLanguageIsEnglish}
-\setboolean{myLanguageIsEnglish}{true} % <--- EDIT!
-\ifthenelse{\boolean{myLanguageIsEnglish}}
-{
-\AddToShipoutPicture*{\put(0,0){\includegraphics[]{Template/title_background_english}}}
-}{% else
-\AddToShipoutPicture*{\put(0,0){\includegraphics[]{Template/title_background_german}}}
-}
-\vspace*{3.5cm}
-\begin{flushleft}
-\Huge % for longer titles you can use other font sizes (e.g. \huge, \Large, etc.)
-Bachelor Thesis \newline % Enter here the type of your work (Master-, Bachelor-, Diplom- oder Studienarbeit)
-\bfseries
-\textsf{\TITLE} % Enter the title of your work
-\end{flushleft}
-\vspace*{0.5cm}
-\begin{Large}
-\textbf{\AUTHOR} % This is the author
-\vspace*{2cm}
-\vfill
-\begin{flushleft}
-\ifthenelse{\boolean{myLanguageIsEnglish}}
-{Advised by:\newline}
-{Betreuung durch:\newline}
-\SUPERVISOR \newline
-\PROF 
-\vspace*{1cm}
-\newline
-\ifthenelse{\boolean{myLanguageIsEnglish}}
-{This thesis was developed between:\newline}
-{Bearbeitungszeitraum:\newline}
-26. Juni 2023 and 18. October 2023
-\end{flushleft}
-\end{Large}
-
-% blank page after title
-\cleardoublepage
+    \begin{center}
+    \Huge{\textbf{\VERSUCHSNR\  \VERSUCHSNAME }}\\
+    
+    \vspace{10mm}% Abstand
+    
+    \hrule
+    \vspace{10mm}
+    \Large{Theis Name}\\
+    \Large{Institute of Communication Acoustics}\\
+    \vspace{10mm} 
+    \hrule
+    \vspace{10mm}
+    \textbf{\LARGE{Ruhr-Universität Bochum}}\\
+    \vspace{2cm}
+    \includegraphics[width=6cm]{logo.png}
+    \vspace{1cm}
+    \end{center}
+    \vspace{1cm}
+    \begin{center}
+    \begin{tabular}{ll} % This is the invisible table, where this things are saved 
+    \large{Author:}		& \textbf{\large{\VerfasserEINS}} \\ 
+                             & \large{\MatNoEINS} \\
+ 
+   % \large{Gruppennummer:}	& \large{\GRUPPENNR} \\
+    \vspace{0cm}\\
+    \large{Time Duration:}	& \large{21.10.2023} -  \large{01.12.2022}\\
+    \vspace{0cm}\\
+    \large{Submitted to:}		& \large{Prof. Dr.-Ing Martin} 
+    \vspace{0cm}\\
+                & \large{M.Sc. \BETREUER}
+    \end{tabular}
+    \end{center}
+    \vspace{1cm}
+    %\hspace{4cm}
+    %\PROTOKOLLDATUM \\
+\end{titlepage}
